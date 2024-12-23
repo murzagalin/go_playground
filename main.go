@@ -7,16 +7,18 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/murzagalin/go_playground/api"
 	db "github.com/murzagalin/go_playground/db/sqlc"
-)
-
-const (
-	dbDriver      = "postgres"
-	dbSource      = "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable"
-	serverAddress = "0.0.0.0:8080"
+	"github.com/murzagalin/go_playground/util"
 )
 
 func main() {
-	conn, err := sql.Open(dbDriver, dbSource)
+	// Load config
+	config, err := util.LoadConfig(".")
+	if err != nil {
+		log.Fatal("cannot load configs: ", err)
+	}
+
+	// Connect to DB
+	conn, err := sql.Open(config.DBDriver, config.DBSource)
 	if err != nil {
 		log.Fatal("cannot connect to db: ", err)
 	}
@@ -26,7 +28,7 @@ func main() {
 	server := api.NewServer(store)
 
 	// Start and run the server
-	err = server.Start(serverAddress)
+	err = server.Start(config.ServerAddress)
 	if err != nil {
 		log.Fatal("cannot start server", err)
 	}
