@@ -5,6 +5,8 @@ go 1.23.4
 require (
 	github.com/gin-gonic/gin v1.10.0
 	github.com/lib/pq v1.10.9
+	github.com/spf13/viper v1.19.0
+	go.uber.org/mock v0.5.0
 )
 
 require (
@@ -19,6 +21,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.23.0 // indirect
 	github.com/goccy/go-json v0.10.4 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
@@ -35,7 +38,6 @@ require (
 	github.com/spf13/afero v1.11.0 // indirect
 	github.com/spf13/cast v1.6.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	github.com/spf13/viper v1.19.0 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
