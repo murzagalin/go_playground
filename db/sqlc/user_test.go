@@ -9,9 +9,12 @@ import (
 )
 
 func createRandomUser(t *testing.T) User {
+	hashedPassword, err := util.HashPassowrd(util.RandomString(10))
+	require.NoError(t, err)
+
 	arg := CreateUserParams{
 		Username:       util.RandomString(10),
-		HashedPassword: util.RandomString(10),
+		HashedPassword: hashedPassword,
 		FullName:       util.RandomString(6),
 		Email:          util.RandomEmail(),
 	}
