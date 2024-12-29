@@ -4,12 +4,24 @@ POST http://localhost:8080/users HTTP/1.1
 content-type: application/json
 
 {
-    "username": "azamatm2",
-    "email": "azamat2@email.com",
+    "username": "azamat3",
+    "email": "azamat4@email.com",
     "full_name": "azamat azamat",
     "password": "qwerty123"
 }
+
+###
         
+### login user
+
+POST http://localhost:8080/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "azamat3",
+    "password": "qwerty123"
+}
+
 ###
 
 ### create an account
