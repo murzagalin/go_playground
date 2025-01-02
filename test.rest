@@ -4,8 +4,8 @@ POST http://localhost:8080/users HTTP/1.1
 content-type: application/json
 
 {
-    "username": "azamat3",
-    "email": "azamat4@email.com",
+    "username": "azamat5",
+    "email": "azamat5@email.com",
     "full_name": "azamat azamat",
     "password": "qwerty123"
 }
@@ -18,7 +18,7 @@ POST http://localhost:8080/users/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "azamat3",
+    "username": "azamat5",
     "password": "qwerty123"
 }
 
@@ -28,16 +28,17 @@ content-type: application/json
 
 POST http://localhost:8080/accounts HTTP/1.1
 content-type: application/json
+Authorization: Bearer v2.local.W-tHqTpP_Is5-J1TekXfaKjDzcSImUlaTrpww6Tjm7XfltPzJGVI19BNkxd0taP3JOS2h6jxn4AjhBC-xX8j8c8ey3xVB7fUxgeEdhL0bKvkVnkYaDd2MKftVN3TEJaYlwWrSOFRhzne2FJW9bVyy4aD1hrJ_-XgSKgLilVMSLfl-kI9UaKe7MrHRbIcjR3r5OUGEUt8owcWAkW44YW4dGVZKxHUO22Bfi0dijDs8APZYT5kRgmLtQeWqBSF1eMVXnXnKr_hygc-.bnVsbA
 
 {
-    "owner": "Someone",
-    "currency": "EUR"
+    "currency": "USD"
 }
 ###
 
 ### get one account
 
-GET http://localhost:8080/accounts/207 HTTP/1.1
+GET http://localhost:8080/accounts/208 HTTP/1.1
+Authorization: Bearer v2.local.W-tHqTpP_Is5-J1TekXfaKjDzcSImUlaTrpww6Tjm7XfltPzJGVI19BNkxd0taP3JOS2h6jxn4AjhBC-xX8j8c8ey3xVB7fUxgeEdhL0bKvkVnkYaDd2MKftVN3TEJaYlwWrSOFRhzne2FJW9bVyy4aD1hrJ_-XgSKgLilVMSLfl-kI9UaKe7MrHRbIcjR3r5OUGEUt8owcWAkW44YW4dGVZKxHUO22Bfi0dijDs8APZYT5kRgmLtQeWqBSF1eMVXnXnKr_hygc-.bnVsbA
 
 ###
 
@@ -47,6 +48,8 @@ GET http://localhost:8080/accounts/207 HTTP/1.1
 GET http://localhost:8080/accounts
         ?page_id=0
         &page_size=20 HTTP/1.1
+Authorization: Bearer v2.local.W-tHqTpP_Is5-J1TekXfaKjDzcSImUlaTrpww6Tjm7XfltPzJGVI19BNkxd0taP3JOS2h6jxn4AjhBC-xX8j8c8ey3xVB7fUxgeEdhL0bKvkVnkYaDd2MKftVN3TEJaYlwWrSOFRhzne2FJW9bVyy4aD1hrJ_-XgSKgLilVMSLfl-kI9UaKe7MrHRbIcjR3r5OUGEUt8owcWAkW44YW4dGVZKxHUO22Bfi0dijDs8APZYT5kRgmLtQeWqBSF1eMVXnXnKr_hygc-.bnVsbA
+
         
 ###
 
@@ -55,10 +58,12 @@ GET http://localhost:8080/accounts
 
 POST http://localhost:8080/transfers HTTP/1.1
 content-type: application/json
+Authorization: Bearer v2.local.W-tHqTpP_Is5-J1TekXfaKjDzcSImUlaTrpww6Tjm7XfltPzJGVI19BNkxd0taP3JOS2h6jxn4AjhBC-xX8j8c8ey3xVB7fUxgeEdhL0bKvkVnkYaDd2MKftVN3TEJaYlwWrSOFRhzne2FJW9bVyy4aD1hrJ_-XgSKgLilVMSLfl-kI9UaKe7MrHRbIcjR3r5OUGEUt8owcWAkW44YW4dGVZKxHUO22Bfi0dijDs8APZYT5kRgmLtQeWqBSF1eMVXnXnKr_hygc-.bnVsbA
+
 
 {
-    "from_account_id": 1,
-    "to_account_id": 2,
+    "from_account_id": 210,
+    "to_account_id": 206,
     "amount": 100,
     "currency": "USD"
 }
