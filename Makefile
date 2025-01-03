@@ -1,5 +1,5 @@
 postgres:
-	docker run --name postgres-simple-bank -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=root -d postgres:17-alpine
+	docker run --name postgres-simple-bank --network bank-network -p 5432:5432 -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=root -d postgres:17-alpine
 
 createdb:
 	docker exec -it postgres-simple-bank createdb --username=root --owner=root simple_bank
@@ -31,4 +31,10 @@ server:
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/murzagalin/go_playground/db/sqlc Store
 
-.PHONY: createdb dropdb postgres migrateup migratedown sqlc test server mock migrateup1 migratedown1
+buildimage:
+	docker build -t simplebank:latest .
+
+runcontainer:
+	docker run --name simplebank -p 8080:8080 --network=bank-network -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@postgres-simple-bank:5432/simple_bank?sslmode=disable" simplebank:latest
+
+.PHONY: createdb dropdb postgres migrateup migratedown sqlc test server mock migrateup1 migratedown1 buildimage
